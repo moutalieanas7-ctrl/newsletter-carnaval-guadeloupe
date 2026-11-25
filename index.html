@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr">
+<!--
+  NEWSLETTER CARNAVAL 2027 - LES ILES DE GUADELOUPE (projet pedagogique)
+  Pour modifier : lire le README (page d accueil du depot GitHub). Chercher le texte avec Ctrl+F,
+  ne changer que le texte (pas ce qui est entre < et >), enregistrer, F5 dans le navigateur.
+  Les sections sont reperees plus bas par des commentaires.
+  Ne pas modifier le texte de l en-tete (HERO) : il est valide.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Newsletter Carnaval 2027 — Les Îles de Guadeloupe</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Projet étudiant : newsletter spéciale Carnaval 2027 des Îles de Guadeloupe.">
+<link rel="icon" href="img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Bodoni+Moda:opsz,wght@6..96,500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Couleurs officielles du Comité du Tourisme des Îles de Guadeloupe */
+  --nuit:#0d3f4f; --ocean:#1d7691; --soleil:#f9ca46;
+  /* Mer des Caraïbes (fond de la newsletter) */
+  --mer:#022b6b; --mer-2:#063a7e;
+  --papier:#ecebe7;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"General Sans",system-ui,sans-serif;
+  --chiffres:"Bodoni Moda",Didot,Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:#fff;font-family:var(--sans);-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+img{display:block;max-width:100%}
+a{color:inherit}
+
+/* ---------- Page de présentation (fond papier) ---------- */
+.stage{min-height:100vh;padding:56px 16px 80px;position:relative;
+  background:
+    radial-gradient(ellipse at 50% 30%,rgba(255,255,255,.7),transparent 70%),
+    var(--papier)}
+.stage::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55  0 0 0 0 .54  0 0 0 0 .52  0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E")}
+.stage__title{position:relative;text-align:center;margin:0 0 34px;color:var(--nuit);font:500 15px/1.4 var(--sans);letter-spacing:.42em;text-transform:uppercase}
+.stage__title span{display:block;margin-top:8px;font:italic 500 17px/1.2 var(--serif);letter-spacing:.04em;text-transform:none;color:var(--ocean)}
+
+/* ---------- La newsletter (600 px, format e-mail) ---------- */
+.mail{position:relative;width:min(600px,100%);margin:0 auto;border-radius:34px;overflow:hidden;background:var(--mer);
+  box-shadow:0 2px 4px rgba(0,0,0,.06),0 30px 60px -20px rgba(2,30,70,.45),0 60px 120px -40px rgba(2,30,70,.35)}
+
+/* HERO : photo + ciel, bas en forme de vague */
+.hero{position:relative;z-index:2;height:780px;
+  -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 46px) no-repeat,url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 48' preserveAspectRatio='none'><path d='M0 0H600V22C575 40 550 40 525 24S475 4 450 20 400 44 375 26 325 2 300 18 250 42 225 26 175 4 150 20 100 44 75 28 25 6 0 22Z'/></svg>") bottom/100% 48px no-repeat;
+          mask:linear-gradient(#000 0 0) top/100% calc(100% - 46px) no-repeat,url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 48' preserveAspectRatio='none'><path d='M0 0H600V22C575 40 550 40 525 24S475 4 450 20 400 44 375 26 325 2 300 18 250 42 225 26 175 4 150 20 100 44 75 28 25 6 0 22Z'/></svg>") bottom/100% 48px no-repeat}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,27,80,.35) 0%,rgba(2,27,80,0) 40%)}
+.hero__in{position:relative;text-align:center;padding:34px 46px 0}
+.logo{width:150px;margin:0 auto}
+.kicker{margin:0;font:500 11px/1.4 var(--sans);letter-spacing:.34em;text-transform:uppercase}
+.hero .kicker{margin-top:44px}
+.h1{margin:10px 0 0;font:600 49px/.98 var(--serif);letter-spacing:.02em;text-transform:uppercase;text-shadow:0 2px 24px rgba(2,27,80,.35)}
+.h1 i{font-style:italic;font-weight:500;text-transform:none;color:var(--soleil);letter-spacing:0}
+.hero p.lead{margin:16px auto 0;max-width:420px;font:500 16px/1.45 var(--serif);color:#fff;text-shadow:0 1px 14px rgba(2,27,80,.55)}
+
+/* OCÉAN : écume + mer des Caraïbes vue du ciel */
+.sea{position:relative;z-index:1;margin-top:-48px;padding:0 0 34px;
+  background:url(img/ocean-long.jpg) top center/100% auto no-repeat,var(--mer);
+  /* écume en haut, puis la même mer répétée sans raccord visible, quelle que soit la longueur */
+  background:url(img/ocean-top.jpg) 0 0/100% auto no-repeat,url(img/ocean-tile.jpg) 0 200cqw/100% auto repeat-y,var(--mer)}
+.mail{container-type:inline-size}
+
+/* ---------- Sections ajoutées ---------- */
+.block{padding:0 32px;margin-top:60px}
+.block--c{text-align:center}
+.block .h2{margin-top:6px}
+.prose{max-width:490px;margin:16px auto 0}
+.prose p{margin:0 0 12px;font:500 15.5px/1.55 var(--serif);text-align:justify;hyphens:auto;color:rgba(255,255,255,.88)}
+.prose p:last-child{margin-bottom:0}
+.quote{margin:20px auto 0;max-width:440px;font:italic 500 25px/1.2 var(--serif);color:var(--soleil);text-align:center}
+.quote small{display:block;margin-top:8px;font:500 9.5px/1.4 var(--sans);font-style:normal;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 32px 0}
+.pics figure,.fam figure,.mosaic figure{margin:0;overflow:hidden;box-shadow:0 18px 36px -18px rgba(0,0,0,.6)}
+.pics figure{height:210px}
+.pics img,.fam img,.mosaic img{width:100%;height:100%;object-fit:cover}
+.fam{display:grid;grid-template-columns:1fr 1fr;gap:26px 18px;margin:26px 32px 0}
+.fam figure{height:150px;margin-bottom:14px}
+.fam h4{margin:0;font:600 18px/1.1 var(--serif);letter-spacing:.05em;text-transform:uppercase}
+.fam h4 span{display:block;margin-bottom:6px;font:600 9px/1 var(--sans);letter-spacing:.26em;color:var(--soleil)}
+.fam p{margin:8px 0 0;font:500 14.5px/1.45 var(--serif);color:rgba(255,255,255,.84)}
+.duo--plain{margin-top:60px}
+.duo--plain .photo{margin-top:8px;height:330px}
+.duo--plain .duo__text{padding-top:0}
+.list{list-style:none;margin:16px 0 0;padding:0}
+.list li{padding:11px 0;border-top:1px solid rgba(255,255,255,.2)}
+.list li:last-child{border-bottom:1px solid rgba(255,255,255,.2)}
+.list b{display:block;font:600 15px/1.2 var(--serif);letter-spacing:.06em;text-transform:uppercase}
+.list span{display:block;margin-top:3px;font:italic 500 14.5px/1.4 var(--serif);color:rgba(255,255,255,.8)}
+.tip{margin:18px 0 0;padding:14px 16px;border-left:3px solid var(--soleil);background:rgba(255,255,255,.08)}
+.tip b{display:block;margin-bottom:6px;font:600 9px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--soleil)}
+.tip p{margin:0;font:italic 500 15px/1.45 var(--serif)}
+.infos{display:grid;grid-template-columns:1fr 1fr;margin:24px 32px 0;border-top:1px solid rgba(255,255,255,.28)}
+.info{padding:16px 16px 16px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.info:nth-child(even){padding:16px 0 16px 18px;border-left:1px solid rgba(255,255,255,.18)}
+.info small{display:block;font:600 9px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--soleil)}
+.info > b{display:block;margin-top:9px;font:500 22px/1 var(--chiffres)}
+.info p{margin:6px 0 0;font:500 14.5px/1.4 var(--serif);color:rgba(255,255,255,.84)}
+.mosaic{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:160px 160px;gap:10px;margin:26px 32px 0}
+.mosaic figure:first-child{grid-row:span 2}
+.caption{margin:12px 32px 0;text-align:center;font:italic 500 14px/1.4 var(--serif);color:rgba(255,255,255,.75)}
+
+.h2{margin:0;font:600 30px/1.02 var(--serif);letter-spacing:.03em;text-transform:uppercase}
+.h2 i{font-style:italic;font-weight:500;text-transform:none;color:var(--soleil)}
+.txt{margin:14px 0 0;font:500 15px/1.5 var(--serif);text-align:justify;hyphens:auto;color:rgba(255,255,255,.88)}
+.num{font-family:var(--chiffres);font-weight:500;font-style:normal;font-size:.9em;letter-spacing:0}
+.lbl{display:block;margin:0 0 10px;font:600 10px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--soleil)}
+
+/* Bloc texte + photo */
+.duo{display:grid;grid-template-columns:1fr 228px;gap:26px;align-items:start;padding:0 32px}
+.duo .photo{margin-top:66px;height:290px;box-shadow:0 20px 40px -18px rgba(0,0,0,.55)}
+.duo .photo img{width:100%;height:100%;object-fit:cover}
+.duo__text{padding-top:206px}
+.duo--rev{grid-template-columns:228px 1fr}
+.duo--rev .photo{margin-top:6px;height:250px}
+.duo--rev .duo__text{padding-top:0}
+
+/* Chiffres clés */
+.figs{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 32px 0;border-top:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28)}
+.fig{padding:18px 6px 16px;text-align:center}
+.fig + .fig{border-left:1px solid rgba(255,255,255,.18)}
+.fig b{display:block;font:500 29px/1 var(--chiffres);letter-spacing:-.01em;white-space:nowrap}
+.fig b small{font-size:.6em;color:var(--soleil)}
+.fig span{display:block;margin-top:7px;font:500 8.6px/1.35 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.src{margin:8px 32px 0;font:400 9px/1.4 var(--sans);color:rgba(255,255,255,.45);text-align:center}
+
+/* Boutons */
+.cta{text-align:center;margin-top:30px}
+.btn{display:inline-block;padding:13px 30px;border-radius:99px;font:500 12.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s,transform .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn--plein{background:#fff;color:var(--mer)}
+.btn--plein:hover{background:var(--soleil);color:var(--nuit)}
+.btn--contour{border:1.5px solid rgba(255,255,255,.9);color:#fff}
+.btn--contour:hover{background:#fff;color:var(--mer)}
+
+/* Grande photo + programme */
+.wide{margin:40px 32px 0;height:250px;box-shadow:0 24px 44px -20px rgba(0,0,0,.6)}
+.wide img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.center{text-align:center;padding:0 32px}
+.center .kicker{margin-top:28px}
+.center .h2{margin-top:6px}
+.days{list-style:none;margin:22px 32px 0;padding:0;border-top:1px solid rgba(255,255,255,.28)}
+.days li{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:14px;padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.18)}
+.days .d{font:500 27px/1 var(--chiffres);text-align:center}
+.days .d small{display:block;font:500 8.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--soleil);margin-bottom:4px}
+.days .n{font:600 17px/1.2 var(--serif);letter-spacing:.04em;text-transform:uppercase}
+.days .n em{display:block;font:italic 500 14px/1.3 var(--serif);text-transform:none;letter-spacing:0;color:rgba(255,255,255,.75)}
+.days .p{font:500 9px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8);text-align:right;max-width:110px}
+.days li.top{background:linear-gradient(90deg,rgba(249,202,70,.16),rgba(249,202,70,0))}
+.days li.top .n{color:var(--soleil)}
+
+/* Infos pratiques */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{padding:6px 10px;border:1px solid rgba(255,255,255,.3);border-radius:99px;font:500 9.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.sep{width:44px;height:1px;margin:44px auto 0;background:rgba(255,255,255,.4)}
+
+/* Pied de page : contact + réseaux */
+.foot{margin:40px 32px 0;padding-top:26px;border-top:1px solid rgba(255,255,255,.22);text-align:center}
+.socials{display:flex;justify-content:center;gap:12px}
+.socials a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.55);transition:background .3s,border-color .3s}
+.socials a:hover{background:#fff;border-color:#fff}
+.socials a:hover svg{fill:var(--mer)}
+.socials svg{width:18px;height:18px;fill:#fff;transition:fill .3s}
+.handle{margin:10px 0 0;font:500 10px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px;padding:16px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.contact a{text-decoration:none;font:500 11px/1.3 var(--sans);letter-spacing:.04em;color:#fff}
+.contact a small{display:block;margin-bottom:5px;font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--soleil)}
+.addr{margin:16px 0 0;font:italic 500 14px/1.4 var(--serif);color:rgba(255,255,255,.8)}
+.legal{margin:18px 0 0;font:400 9px/1.5 var(--sans);color:rgba(255,255,255,.45)}
+.legal a{color:rgba(255,255,255,.7)}
+
+/* ---------- Mobile ---------- */
+@media (max-width:560px){
+  .stage{padding:32px 12px 56px}
+  .stage__title{font-size:12px;letter-spacing:.3em}
+  .mail{border-radius:24px}
+  .hero{height:640px}
+  .hero__in{padding:26px 22px 0}
+  .hero .kicker{margin-top:40px}
+  .h1{font-size:37px}
+  .hero p.lead{font-size:15px}
+  .duo,.duo--rev{grid-template-columns:1fr;padding:0 22px;gap:0}
+  .duo .photo{margin-top:150px;height:250px;order:-1}
+  .duo__text{padding-top:26px}
+  .duo--rev .photo{margin-top:0}
+  .figs{grid-template-columns:repeat(2,1fr);margin:30px 22px 0}
+  .fig:nth-child(3){border-left:0}
+  .fig:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
+  .wide{margin:36px 22px 0;height:200px}
+  .center{padding:0 22px}
+  .days{margin:20px 22px 0}
+  .days li{grid-template-columns:58px 1fr}
+  .days .p{grid-column:2;text-align:left;max-width:none;margin-top:-6px}
+  .foot{margin:36px 22px 0}
+  .contact{grid-template-columns:1fr;gap:14px}
+  .block{padding:0 22px;margin-top:52px}
+  .pics,.fam,.infos,.mosaic{margin-left:22px;margin-right:22px}
+  .pics figure{height:160px}
+  .fam{gap:22px 12px}
+  .fam figure{height:120px}
+  .fam h4{font-size:16px}
+  .fam p{font-size:14px}
+  .duo--plain{margin-top:52px}
+  .duo--plain .photo{margin-top:0;height:260px}
+  .infos{grid-template-columns:1fr}
+  .info,.info:nth-child(even){padding:14px 0;border-left:0}
+  .mosaic{grid-template-rows:120px 120px}
+  .caption{margin:12px 22px 0}
+}
+</style>
+</head>
+<body>
+<main class="stage">
+  <h1 class="stage__title">Newsletter · Les Îles de Guadeloupe<span>Édition spéciale Carnaval <b class="num">2027</b> — novembre <b class="num">2026</b></span></h1>
+
+  <article class="mail">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <img src="img/hero-ciel.jpg" alt="Parade du carnaval à Basse-Terre, au pied des mornes, sous le ciel bleu de Guadeloupe">
+      <div class="hero__in">
+        <a href="https://www.lesilesdeguadeloupe.com/"><img class="logo" src="img/logo.svg" alt="Les Îles de Guadeloupe — Incomparables"></a>
+        <p class="kicker">Du 3 janvier au 10 février 2027</p>
+        <h2 class="h1">Le carnaval<br>des <i>Îles de</i> Guadeloupe</h2>
+        <p class="lead">Tambours, plumes et paillettes&nbsp;: plus de <b class="num">150</b>&nbsp;ans de tradition envahissent les rues de l'archipel chaque&nbsp;dimanche.</p>
+      </div>
+    </header>
+
+    <!-- ===== MER DES CARAÏBES ===== -->
+    <section class="sea">
+
+      <!-- Une fête pas comme les autres -->
+      <div class="duo">
+        <div class="duo__text">
+          <span class="lbl">Kannaval 2027</span>
+          <h3 class="h2">Une fête<br>pas comme<br>les autres</h3>
+          <p class="txt">Né de la rencontre entre fêtes européennes et rythmes africains, le carnaval fait défiler près de <b class="num">20&#8201;000</b> carnavaliers&nbsp;: groupes à po, à mas, à caisses claires ou à synthé. Chacun a ses tambours, ses costumes… et sa satire.</p>
+          <p class="txt">Pendant cinq semaines, chaque commune vit au rythme des répétitions, des concours de costumes et des bals populaires qui durent jusqu'au bout de la nuit. Ici, le carnaval se vit dans la rue, gratuitement, au milieu des carnavaliers.</p>
+        </div>
+        <figure class="photo" style="margin-left:0;margin-right:0;margin-bottom:0"><img src="img/danseuse.webp" alt="Carnavalière en costume de plumes vertes, Carnaval de Guadeloupe" style="object-position:47% 30%"></figure>
+      </div>
+
+      <!-- Chiffres clés -->
+      <div class="figs">
+        <div class="fig"><b>39</b><span>jours<br>de fête</span></div>
+        <div class="fig"><b><small>≈</small>130</b><span>groupes<br>de carnaval</span></div>
+        <div class="fig"><b>100&#8201;000</b><span>spectateurs<br>au Mardi Gras</span></div>
+        <div class="fig"><b>0<small>€</small></b><span>l'accès<br>aux défilés</span></div>
+      </div>
+      <p class="src">Sources : CTIG ; presse locale (Mardi Gras 2025, Basse-Terre) ; revue <i>Ethnologies</i>, 2012.</p>
+
+      <div class="cta"><a class="btn btn--plein" href="https://www.lesilesdeguadeloupe.com/decouvrir/le-carnaval/">Découvrir le carnaval</a></div>
+
+      <!-- Histoire -->
+      <div class="block block--c">
+        <p class="kicker">Notre histoire</p>
+        <h3 class="h2">Plus de <b class="num">150</b>&nbsp;ans <i>de liberté</i></h3>
+        <div class="prose">
+          <p>Introduit il y a plus de <b class="num">150</b>&nbsp;ans, le carnaval guadeloupéen mêle les fêtes catholiques venues d'Europe et les rites africains apportés par les populations réduites en esclavage. Très vite, il devient un espace d'expression libre&nbsp;: on y rit des puissants, on y commente l'actualité, on y affirme une identité créole.</p>
+          <p>Le Mas Vyé Fò compte parmi les plus anciennes manifestations de l'archipel. Et chaque saison se termine de la même façon&nbsp;: Vaval, roi du carnaval, personnage géant inspiré de l'actualité, est brûlé le mercredi des Cendres sous les fausses larmes de la foule, vêtue de noir et blanc.</p>
+        </div>
+        <p class="quote">«&nbsp;Vaval pa kité&nbsp;nou&nbsp;!&nbsp;»<small>« Vaval, ne nous quitte pas&nbsp;! » — le chant d'adieu en créole</small></p>
+      </div>
+      <div class="pics">
+        <figure><img src="img/c45.webp" alt="Carnavalier en coiffe de plumes rouges" style="object-position:40% 30%"></figure>
+        <figure><img src="img/c3.webp" alt="Carnavaliers masqués d'un groupe à mas" style="object-position:50% 40%"></figure>
+      </div>
+
+      <!-- Les familles de groupes -->
+      <div class="block block--c">
+        <p class="kicker">Les groupes</p>
+        <h3 class="h2">Quatre familles, <i>quatre sons</i></h3>
+        <div class="prose"><p style="text-align:center">Chaque groupe crée ses costumes, sa musique et sa chorégraphie. Avant les grands jours, apprenez à les reconnaître… à l'oreille.</p></div>
+      </div>
+      <div class="fam">
+        <div><figure><img src="img/tambour.webp" alt="Musicien d'un groupe à po et son tambour"></figure><h4><span>Les racines</span>Groupes à po</h4><p>Les plus traditionnels&nbsp;: tambours en peau de cabri, ti-bois et chants créoles improvisés, costumes en toile de jute ou en tissus recyclés.</p></div>
+        <div><figure><img src="img/c1.webp" alt="Masque peint d'un groupe à mas" style="object-position:30% 50%"></figure><h4><span>La satire</span>Groupes à mas</h4><p>Masques, chorégraphies et performances souvent satiriques&nbsp;: l'expressivité avant tout, pour bousculer l'ordre établi.</p></div>
+        <div><figure><img src="img/caisses110.webp" alt="Danseuses d'un groupe à caisses claires en costumes violets"></figure><h4><span>La cadence</span>Caisses claires</h4><p>Percussions structurées, prestations millimétrées et costumes sophistiqués autour d'un thème choisi chaque année.</p></div>
+        <div><figure><img src="img/synthe.webp" alt="Danseuse d'un groupe à synthé devant un char" style="object-position:50% 35%"></figure><h4><span>Le son urbain</span>Groupes à synthé</h4><p>Claviers, instruments électrifiés et bandes-son&nbsp;: la touche moderne qui fait danser les plus jeunes.</p></div>
+      </div>
+
+      <!-- Les jours gras -->
+      <figure class="wide" style="margin-bottom:0"><img src="img/hero-caisses.webp" alt="Carnavalières d'un groupe à caisses claires en coiffes de plumes"></figure>
+      <div class="center">
+        <p class="kicker">Le temps fort · 7 → 10 février 2027</p>
+        <h3 class="h2">Les <b class="num">4</b> jours <i>gras</i></h3>
+        <div class="prose"><p style="text-align:center">Point d'orgue de la saison, les jours gras réunissent les plus grands défilés de l'année. Conseil&nbsp;: arrivez tôt, les meilleures places le long des parcours partent vite.</p></div>
+      </div>
+      <ul class="days">
+        <li><span class="d"><small>Dim.</small>07</span><span class="n">Dimanche Gras<em>Grande parade en compétition</em></span><span class="p">Pointe-à-Pitre</span></li>
+        <li><span class="d"><small>Lun.</small>08</span><span class="n">Lundi Gras<em>Parade de nuit, mariages burlesques</em></span><span class="p">Basse-Terre<br>St-François</span></li>
+        <li class="top"><span class="d"><small>Mar.</small>09</span><span class="n">Mardi Gras<em>La plus grande parade de l'année</em></span><span class="p">Basse-Terre</span></li>
+        <li><span class="d"><small>Mer.</small>10</span><span class="n">Mercredi des Cendres<em>En noir et blanc, Vaval part en fumée</em></span><span class="p">Tout l'archipel</span></li>
+      </ul>
+
+      <!-- Toute la saison -->
+      <div class="duo duo--plain">
+        <div class="duo__text">
+          <span class="lbl">Dès le 3 janvier</span>
+          <h3 class="h2">Toute la saison,<br><i>chaque dimanche</i></h3>
+          <p class="txt">Pas besoin d'attendre février&nbsp;: de Pointe-à-Pitre à Basse-Terre, des Abymes au Gosier, de Baie-Mahault à Saint-François, les communes défilent tour à tour.</p>
+          <ul class="list">
+            <li><b>Élection de la Reine</b><span>Strass, plumes et couronne&nbsp;: la soirée glamour de la saison.</span></li>
+            <li><b>Lévé Pyjama</b><span>Le défilé du petit matin… en pyjama, évidemment.</span></li>
+            <li><b>Mariage burlesque</b><span>Une noce parodique où les rôles s'inversent.</span></li>
+            <li><b>Défilés d'enfants</b><span>Chorégraphies et costumes préparés à l'école ou en association.</span></li>
+          </ul>
+        </div>
+        <figure class="photo" style="margin-left:0;margin-right:0;margin-bottom:0"><img src="img/c303.webp" alt="Petite fille maquillée de paillettes roses pendant le carnaval" style="object-position:50% 40%"></figure>
+      </div>
+
+      <!-- Vivez-le de l'intérieur -->
+      <div class="duo duo--rev" style="margin-top:60px">
+        <figure class="photo" style="margin-left:0;margin-right:0;margin-bottom:0;height:320px"><img src="img/portrait3.webp" alt="Carnavalière d'un groupe à po, tambour à l'épaule" style="object-position:50% 25%"></figure>
+        <div class="duo__text">
+          <span class="lbl">Expérience</span>
+          <h3 class="h2">Vivez-le <i>de l'intérieur</i></h3>
+          <p class="txt">Le carnaval ne se regarde pas seulement depuis le trottoir. Selon les périodes et les groupes, vous pouvez rencontrer les carnavaliers, assister aux répétitions, participer à un atelier de percussions… et parfois défiler à leurs côtés.</p>
+          <div class="tip"><b>Le conseil de l'Office</b><p>Le costume n'est pas obligatoire, mais paillettes, maquillage et accessoires sont vivement recommandés.</p></div>
+        </div>
+      </div>
+
+      <!-- Entre deux parades -->
+      <div class="duo duo--rev" style="margin-top:60px">
+        <figure class="photo" style="margin-left:0;margin-right:0;margin-bottom:0"><img src="img/ilet.webp" alt="L'îlet du Gosier et son lagon vus du ciel" style="object-position:45% 50%"></figure>
+        <div class="duo__text">
+          <span class="lbl">Février, c'est le Carême</span>
+          <h3 class="h2">Entre deux<br><i>parades</i></h3>
+          <p class="txt">La saison sèche bat son plein&nbsp;: <b class="num">28</b>&nbsp;°C dans l'air, <b class="num">26</b>&nbsp;°C dans l'eau et cinq îles à explorer, de l'îlet du Gosier à Marie-Galante.</p>
+          <p class="txt">Le matin, les plages de sable blanc de Grande-Terre&nbsp;; l'après-midi, la forêt tropicale et les cascades de Basse-Terre. Et pour souffler après les jours gras, cap sur Les Saintes, Marie-Galante ou La Désirade.</p>
+        </div>
+      </div>
+
+      <!-- Infos pratiques -->
+      <div class="block block--c">
+        <p class="kicker">Infos pratiques</p>
+        <h3 class="h2">Préparer <i>son voyage</i></h3>
+      </div>
+      <div class="infos">
+        <div class="info"><small>Y aller</small><b>≈ 8 h 30</b><p>de vol direct entre Paris et Pointe-à-Pitre.</p></div>
+        <div class="info"><small>Décalage</small><b>− 5 h</b><p>avec Paris en février&nbsp;: à <b class="num">14</b>&nbsp;h en Guadeloupe, il est <b class="num">19</b>&nbsp;h à Paris.</p></div>
+        <div class="info"><small>Climat</small><b>28 °C</b><p>en journée, en pleine saison sèche. Chapeau, crème solaire et eau indispensables.</p></div>
+        <div class="info"><small>Formalités</small><b>€ · ID</b><p>L'euro et une carte d'identité valide suffisent aux citoyens européens.</p></div>
+        <div class="info"><small>Réserver</small><b>Tôt</b><p>Février est en haute saison&nbsp;: vols, voitures et hébergements partent vite.</p></div>
+        <div class="info"><small>Le programme</small><b>Hello Guadeloupe</b><p>L'appli officielle&nbsp;: défilés, plages et météo, jour par jour.</p></div>
+      </div>
+
+      <!-- En images -->
+      <div class="mosaic">
+        <figure><img src="img/c536.webp" alt="Carnavalier en costume de plumes jaunes" style="object-position:45% 30%"></figure>
+        <figure><img src="img/hero-caisses.webp" alt="Carnavalières en coiffes de plumes" style="object-position:20% 35%"></figure>
+        <figure><img src="img/c4.webp" alt="Tambourinaire en costume de carnaval" style="object-position:50% 40%"></figure>
+      </div>
+      <p class="caption">Partagez vos plus belles photos avec <b style="font-style:normal;font-family:var(--sans);font-size:12px;letter-spacing:.06em">#IlesDeGuadeloupe</b>&nbsp;: les meilleures seront publiées sur nos réseaux.</p>
+
+      <!-- Appel final -->
+      <div class="sep"></div>
+      <div class="center">
+        <p class="kicker" style="margin-top:22px">Préparez votre séjour</p>
+        <h3 class="h2" style="font-size:34px">Bon <i>kannaval</i>&nbsp;!</h3>
+      </div>
+      <div class="cta" style="margin-top:22px"><a class="btn btn--contour" href="https://www.lesilesdeguadeloupe.com/">Planifier mon séjour</a></div>
+
+      <!-- Pied de page -->
+      <footer class="foot">
+        <div class="socials">
+          <a href="https://www.instagram.com/ilesguadeloupe/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM16.5 2h-9A5.5 5.5 0 0 0 2 7.5v9A5.5 5.5 0 0 0 7.5 22h9a5.5 5.5 0 0 0 5.5-5.5v-9A5.5 5.5 0 0 0 16.5 2Zm3.7 14.5a3.7 3.7 0 0 1-3.7 3.7h-9a3.7 3.7 0 0 1-3.7-3.7v-9a3.7 3.7 0 0 1 3.7-3.7h9a3.7 3.7 0 0 1 3.7 3.7v9Z"/></svg></a>
+          <a href="https://www.tiktok.com/@ilesguadeloupe" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg></a>
+          <a href="https://www.facebook.com/lesilesdeguadeloupe" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V1.6L14 1.6c-4 0-4.9 3-4.9 4.9v2H6.8v4h2.3V22H14v-9.5h3.3l.4-4H14Z"/></svg></a>
+        </div>
+        <p class="handle">@ilesguadeloupe · #IlesDeGuadeloupe</p>
+
+        <div class="contact">
+          <a href="https://www.lesilesdeguadeloupe.com/"><small>Site</small>lesilesdeguadeloupe.com</a>
+          <a href="mailto:info@lesilesdeguadeloupe.com"><small>E-mail</small>info@lesilesdeguadeloupe.com</a>
+          <a href="tel:+590590820930"><small>Téléphone</small>+590 (0)5 90 82 09 30</a>
+        </div>
+        <p class="addr">Comité du Tourisme des Îles de Guadeloupe<br>Immeuble Antares, rue Georges Biras, Dothémare — <b class="num">97139</b> Les Abymes</p>
+        <p class="legal">Vous recevez cette newsletter car vous êtes inscrit·e sur lesilesdeguadeloupe.com.<br><a href="#">Se désinscrire</a> · <a href="#">Voir en ligne</a> · Photos : Îles de Guadeloupe — G. Aricique, B. Balmokoun<br>Projet pédagogique : newsletter réalisée dans le cadre d'un exercice, non diffusée par le Comité du Tourisme.</p>
+      </footer>
+    </section>
+  </article>
+</main>
+</body>
+</html>

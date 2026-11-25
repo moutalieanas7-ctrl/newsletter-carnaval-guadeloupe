@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kannaval 2027 — La newsletter des Îles de Guadeloupe</title>
+<meta name="description" content="Newsletter spéciale Carnaval 2027 du Comité du Tourisme des Îles de Guadeloupe.">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   IDENTITÉ — Comité du Tourisme des Îles de Guadeloupe
+   Couleurs officielles du site + couleurs du logo papillon
+   ========================================================= */
+:root{
+  --nuit:#0d3f4f;      /* bleu nuit officiel */
+  --abysse:#072a35;
+  --ocean:#1d7691;     /* bleu officiel */
+  --lagon:#469cb6;
+  --ciel:#4ea5d5;      /* logo */
+  --soleil:#f9ca46;    /* jaune officiel */
+  --mangue:#e8972b;    /* logo */
+  --canne:#a2c94a;     /* logo */
+  --piment:#cf3426;    /* logo */
+  --indigo:#2d4491;    /* logo */
+  --hibiscus:#e2366a;  /* accent carnaval */
+  --sable:#fbf4e6;
+  --sable-2:#f3e7cf;
+  --ink:#082833;
+  --display:"Clash Display","Satoshi",system-ui,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Satoshi",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sable);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+@media (min-width:760px){.wrap{width:min(var(--wrap),100% - 80px)}}
+
+/* grain premium */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Madras — le tissu emblématique de la Guadeloupe */
+.madras{background:
+  repeating-linear-gradient(90deg,rgba(207,52,38,.82) 0 9px,transparent 9px 20px,rgba(45,68,145,.6) 20px 23px,transparent 23px 36px,rgba(162,201,74,.85) 36px 43px,transparent 43px 58px,rgba(255,255,255,.55) 58px 60px,transparent 60px 72px),
+  repeating-linear-gradient(0deg,rgba(207,52,38,.62) 0 9px,transparent 9px 20px,rgba(45,68,145,.45) 20px 23px,transparent 23px 36px,rgba(232,151,43,.85) 36px 43px,transparent 43px 58px,rgba(255,255,255,.45) 58px 60px,transparent 60px 72px),
+  var(--soleil)}
+.madras-band{height:12px}
+
+/* Typo commune */
+.eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 22px;font:700 .74rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ocean)}
+.eyebrow b{font:600 .74rem/1 var(--display);letter-spacing:.12em;padding:6px 10px;border-radius:99px;background:var(--nuit);color:var(--soleil)}
+.eyebrow::after{content:"";flex:0 0 56px;height:1px;background:currentColor;opacity:.5}
+.on-dark .eyebrow{color:var(--soleil)}
+.on-dark .eyebrow b{background:var(--soleil);color:var(--nuit)}
+.h2{margin:0;font:600 clamp(2.5rem,6vw,5.4rem)/.92 var(--display);letter-spacing:-.035em;color:var(--nuit);text-wrap:balance}
+.h2 em{font:italic 400 1.08em/1 var(--serif);letter-spacing:-.01em;color:var(--ocean)}
+.on-dark .h2{color:#fff}
+.on-dark .h2 em{color:var(--soleil)}
+.lede{max-width:56ch;margin:22px 0 0;font-size:1.06rem;color:rgba(8,40,51,.78)}
+.on-dark .lede{color:rgba(255,255,255,.78)}
+.sec{padding:clamp(80px,11vw,150px) 0;position:relative}
+
+/* Révélations au scroll */
+.js .reveal{opacity:0;transform:translateY(46px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
+
+/* =========================================================
+   PRÉ-HEADER (codes newsletter)
+   ========================================================= */
+.pre{background:var(--abysse);color:rgba(255,255,255,.72);font:500 .74rem/1 var(--sans);letter-spacing:.06em}
+.pre .wrap{display:flex;justify-content:space-between;gap:16px;padding:11px 0}
+.pre a{color:var(--soleil);text-decoration:none;border-bottom:1px solid rgba(249,202,70,.4)}
+.pre .hide-s{display:none}
+@media (min-width:640px){.pre .hide-s{display:inline}}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:min(calc(100svh - 38px),980px);color:#fff;overflow:hidden;background:var(--abysse);display:flex;flex-direction:column}
+.hero__media{position:absolute;inset:-4% 0 0 0;will-change:transform}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:42% 30%;transform:scale(1.12);animation:kenburns 18s var(--ease) forwards}
+@keyframes kenburns{to{transform:scale(1.0)}}
+.hero__shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(7,42,53,.78) 0%,rgba(7,42,53,.05) 26%,rgba(7,42,53,0) 46%,rgba(7,42,53,.55) 72%,rgba(7,42,53,.97) 100%),
+  linear-gradient(90deg,rgba(7,42,53,.82) 0%,rgba(7,42,53,.45) 30%,transparent 55%)}
+.confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero__top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0}
+.brand img{width:clamp(150px,17vw,212px);height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.25))}
+.issue{display:none;text-align:right;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;line-height:1.5}
+.issue span{display:block;opacity:.7}
+.issue b{font:600 .95rem/1.2 var(--display);letter-spacing:.04em;text-transform:none}
+.issue--c{text-align:center}
+@media (min-width:760px){.issue{display:block}}
+.issue-pill{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:99px;background:rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);font:600 .8rem/1 var(--display);letter-spacing:.04em}
+.issue-pill i{width:8px;height:8px;border-radius:50%;background:var(--soleil);box-shadow:0 0 0 0 rgba(249,202,70,.7);animation:pulse 2s infinite}
+@media (max-width:560px){.issue-pill{display:none}}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(249,202,70,0)}100%{box-shadow:0 0 0 0 rgba(249,202,70,0)}}
+
+.hero__body{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;padding-top:2vh}
+.kicker{display:inline-flex;align-items:center;gap:12px;margin:0 0 18px;font:600 .8rem/1 var(--display);letter-spacing:.22em;text-transform:uppercase}
+.kicker::before{content:"";width:40px;height:2px;background:var(--soleil)}
+.hero__serif{margin:0;font:italic 400 clamp(2.1rem,5.2vw,4.6rem)/.98 var(--serif);letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.35);max-width:12ch}
+.hero__serif em{color:var(--soleil)}
+.hero__title{position:relative;z-index:3;margin:0;padding:0 0 0 .02em;font:700 16vw/.8 var(--display);letter-spacing:-.045em;text-align:center;white-space:nowrap;user-select:none}
+.hero__title .l{display:inline-block;transform:translateY(105%);opacity:0;animation:rise 1.1s var(--ease) forwards;transition:transform .5s var(--ease),color .3s}
+.hero__title .l:nth-child(1){animation-delay:.15s}.hero__title .l:nth-child(2){animation-delay:.22s}.hero__title .l:nth-child(3){animation-delay:.29s}.hero__title .l:nth-child(4){animation-delay:.36s}.hero__title .l:nth-child(5){animation-delay:.43s}.hero__title .l:nth-child(6){animation-delay:.5s}.hero__title .l:nth-child(7){animation-delay:.57s}.hero__title .l:nth-child(8){animation-delay:.64s}
+@keyframes rise{to{transform:none;opacity:1}}
+.hero__title .l:hover{color:var(--soleil);transform:translateY(-6%) rotate(-3deg)}
+.hero__mask{overflow:hidden;display:block;padding-top:.04em}
+.hero__foot{position:relative;z-index:3;border-top:1px solid rgba(255,255,255,.2);margin-top:clamp(14px,2vw,26px)}
+.hero__foot .wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;padding:18px 0 56px}
+.hero__foot div{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.hero__foot b{display:block;font:600 1.15rem/1.2 var(--display);letter-spacing:0;text-transform:none;color:#fff}
+.hero__foot b span{color:var(--soleil)}
+@media (min-width:760px){.hero__foot .wrap{grid-template-columns:repeat(4,1fr)}}
+
+/* Badge tournant */
+.badge{position:absolute;z-index:4;right:clamp(16px,5vw,80px);top:clamp(120px,24vh,250px);width:clamp(104px,11vw,150px);aspect-ratio:1;display:grid;place-items:center}
+.badge::before{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(7,42,53,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18)}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
+.badge__core{position:relative}
+.badge text{font:600 13.5px var(--display);letter-spacing:.18em;fill:#fff;text-transform:uppercase}
+.badge__core{width:56%;aspect-ratio:1;border-radius:50%;background:var(--soleil);color:var(--nuit);display:grid;place-items:center;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.badge__core small{display:block;font:700 .55rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.badge__core strong{display:block;font:700 clamp(1.1rem,1.6vw,1.5rem)/1 var(--display);letter-spacing:-.03em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* =========================================================
+   TICKER
+   ========================================================= */
+.ticker{background:var(--soleil);color:var(--nuit);overflow:hidden;border-block:2px solid var(--nuit);position:relative;z-index:5}
+.ticker--tilt{transform:rotate(-1.6deg) scale(1.04);margin:-22px 0 -10px}
+.ticker__track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.ticker span{display:flex;align-items:center;gap:28px;padding:16px 14px;font:600 clamp(1.1rem,2.2vw,1.7rem)/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
+.ticker span i{font-style:normal;color:var(--piment)}
+.ticker span em{font:italic 400 1.15em/1 var(--serif);text-transform:none;color:var(--ocean)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* =========================================================
+   ÉDITO
+   ========================================================= */
+.edito .wrap{display:grid;gap:56px;align-items:center}
+@media (min-width:960px){.edito .wrap{grid-template-columns:5fr 7fr;gap:90px}}
+.arch{position:relative}
+.arch__img{border-radius:999px 999px 28px 28px;overflow:hidden;aspect-ratio:4/5.2;box-shadow:0 40px 80px -30px rgba(13,63,79,.45)}
+.arch__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.arch:hover .arch__img img{transform:scale(1.05)}
+.arch__ring{position:absolute;inset:-14px;border:1.5px solid var(--ocean);border-radius:999px 999px 38px 38px;opacity:.35;pointer-events:none}
+.sticker{position:absolute;font:600 1rem/1 var(--display);padding:14px 20px;border-radius:99px;background:var(--hibiscus);color:#fff;transform:rotate(-8deg);box-shadow:0 14px 30px -10px rgba(226,54,106,.6)}
+.sticker em{font:italic 400 1.2em/1 var(--serif)}
+.sticker--a{right:-10px;top:12%}
+.sticker--b{left:-14px;bottom:14%;background:var(--soleil);color:var(--nuit);transform:rotate(6deg);box-shadow:0 14px 30px -10px rgba(232,151,43,.6)}
+.edito__text p{font-size:1.1rem;margin:24px 0 0;color:rgba(8,40,51,.82);max-width:58ch}
+.edito__text p:first-of-type::first-letter{float:left;font:400 5.2em/.78 var(--serif);margin:.06em .1em 0 0;color:var(--hibiscus)}
+.quote{margin:34px 0 0;padding:26px 0 0;border-top:1px solid rgba(13,63,79,.15);font:italic 400 clamp(1.5rem,2.6vw,2.1rem)/1.15 var(--serif);color:var(--nuit)}
+.quote span{font:700 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--ocean);display:block;margin-top:14px}
+.sign{display:flex;align-items:center;gap:14px;margin-top:30px;font-size:.88rem;color:rgba(8,40,51,.7)}
+.sign svg{width:46px;height:46px;flex:none}
+.sign b{display:block;color:var(--nuit);font:600 1rem/1.3 var(--display)}
+
+/* =========================================================
+   CHIFFRES
+   ========================================================= */
+.numbers{background:var(--nuit);color:#fff;overflow:hidden}
+.numbers::before{content:"";position:absolute;inset:0;background:url(img/texture.png) bottom/cover no-repeat;opacity:.09;filter:invert(1)}
+.numbers__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:56px;position:relative}
+.stats{position:relative;display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:980px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{container-type:inline-size;position:relative;padding:28px 24px 26px;border-radius:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);overflow:hidden;transition:transform .5s var(--ease),background .4s}
+.stat:hover{transform:translateY(-6px);background:rgba(255,255,255,.1)}
+.stat::before{content:"";position:absolute;left:24px;top:0;width:44px;height:5px;border-radius:0 0 6px 6px;background:var(--c,var(--soleil))}
+.stat__n{display:block;font:600 clamp(1.8rem,24cqi,4.6rem)/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat__n sup{font-size:.45em;vertical-align:top;margin-left:.06em;color:var(--c,var(--soleil))}
+.stat__n .pre-sym{font:italic 400 .7em/1 var(--serif);color:var(--c,var(--soleil));margin-right:.04em}
+.stat p{margin:12px 0 0;font-size:.92rem;line-height:1.45;color:rgba(255,255,255,.75)}
+.stat p b{color:#fff}
+.stat--big{grid-column:span 2;background:var(--soleil);color:var(--nuit);border:0;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end}
+.stat--big:hover{background:#fbd462}
+.stat--big::before{background:var(--nuit)}
+.stat--big .stat__n{font-size:22cqi}
+.stat--big p{color:rgba(13,63,79,.85);font-size:1rem;max-width:34ch}
+.stat--big p b{color:var(--nuit)}
+.stat--big .stat__img{position:absolute;right:22px;top:50%;width:34%;aspect-ratio:1;transform:translateY(-50%) rotate(-4deg);border-radius:50%;overflow:hidden;border:5px solid var(--nuit);box-shadow:0 20px 40px -16px rgba(13,63,79,.55);display:none;transition:transform .8s var(--ease)}
+.stat--big:hover .stat__img{transform:translateY(-50%) rotate(4deg) scale(1.04)}
+.stat--big .stat__img img{width:100%;height:100%;object-fit:cover}
+@media (min-width:600px){
+  .stat--big .stat__img{display:block}
+  .stat--big .stat__n{font-size:15cqi}
+  .stat--big p{max-width:58%}
+}
+.sources{position:relative;margin:28px 0 0;font-size:.74rem;line-height:1.5;color:rgba(255,255,255,.5);max-width:110ch}
+
+/* =========================================================
+   JOURS GRAS
+   ========================================================= */
+.days-head{display:grid;gap:22px;margin-bottom:60px}
+@media (min-width:960px){.days-head{grid-template-columns:7fr 5fr;align-items:end}}
+.rail{position:relative;height:2px;background:rgba(13,63,79,.15);margin:0 0 30px;display:none}
+.rail i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:var(--sable);border:3px solid var(--nuit);transform:translate(-50%,-50%)}
+.rail::after{content:"";position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--ocean),var(--mangue),var(--soleil),#111);transition:transform 1.6s var(--ease)}
+@media (min-width:980px){.rail{display:block}}
+.days{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:700px){.days{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.days{grid-template-columns:repeat(4,1fr)}}
+.day{position:relative;padding:26px 24px 28px;border-radius:28px;background:#fff;border:1px solid rgba(13,63,79,.1);display:flex;flex-direction:column;min-height:420px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s}
+.day:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(13,63,79,.45)}
+.day__top{display:flex;justify-content:space-between;font:700 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--c)}
+.day__num{margin:18px 0 6px;font:600 clamp(6rem,9vw,8.4rem)/.85 var(--display);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px var(--c);transition:color .5s}
+.day:hover .day__num{color:var(--c)}
+.day h3{margin:0;font:600 1.7rem/1.05 var(--display);letter-spacing:-.02em;color:var(--nuit)}
+.day__place{display:flex;align-items:center;gap:7px;margin:10px 0 0;font:700 .8rem/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.day__place svg{width:15px;height:15px;flex:none}
+.day p.d{margin:14px 0 0;font-size:.97rem;line-height:1.5;color:rgba(8,40,51,.78)}
+.day__tag{margin-top:auto;padding-top:18px;font:600 .82rem/1.2 var(--display);display:flex;align-items:center;gap:8px}
+.day__tag i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.day--dim{--c:var(--ocean)}
+.day--lun{--c:var(--indigo)}
+.day--mar{--c:var(--nuit);background:var(--soleil);border:0}
+.day--mar p.d{color:rgba(13,63,79,.9)}
+.day--mar::after{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;opacity:.9}
+.day--mar .day__ribbon{position:absolute;right:18px;top:20px;padding:7px 12px;border-radius:99px;background:var(--hibiscus);color:#fff;font:600 .7rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;transform:rotate(4deg)}
+.day--mer{--c:#fff;background:#0f1417;color:#fff;border:0;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 2px,transparent 2px 14px)}
+.day--mer h3{color:#fff}
+.day--mer p.d{color:rgba(255,255,255,.75)}
+.day--mer .day__vaval{margin:16px 0 0;font:italic 400 1.5rem/1.1 var(--serif);color:#fff}
+.days-note{margin:30px 0 0;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-size:.9rem;color:rgba(8,40,51,.72)}
+.days-note b{color:var(--nuit)}
+.days-note .pill{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:99px;background:var(--nuit);color:#fff;font:600 .88rem/1.2 var(--display)}
+.days-note .pill i{color:var(--soleil);font-style:normal}
+
+/* =========================================================
+   FAMILLES DE GROUPES
+   ========================================================= */
+.groups{background:var(--sable-2)}
+.groups__head{display:grid;gap:22px;margin-bottom:56px}
+@media (min-width:960px){.groups__head{grid-template-columns:7fr 5fr;align-items:end}}
+.cards{display:grid;gap:16px;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:none}
+.cards::-webkit-scrollbar{display:none}
+@media (min-width:700px){.cards{grid-auto-columns:46%}}
+@media (min-width:1080px){.cards{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible}}
+.card{position:relative;scroll-snap-align:start;border-radius:28px;overflow:hidden;aspect-ratio:3/4.3;color:#fff;isolation:isolate;background:var(--nuit)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease),filter .8s}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,42,53,.25) 0%,rgba(7,42,53,0) 30%,rgba(7,42,53,.55) 62%,rgba(7,42,53,.95) 100%)}
+.card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.card:hover img{transform:scale(1.08)}
+.card:hover::after{transform:scaleX(1)}
+.card__top{position:absolute;left:20px;right:20px;top:20px;display:flex;justify-content:space-between;align-items:center}
+.card__idx{font:italic 400 1.6rem/1 var(--serif)}
+.card__chip{padding:8px 13px;border-radius:99px;background:rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);font:600 .7rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
+.card__body{position:absolute;left:22px;right:22px;bottom:24px}
+.card h3{margin:0;font:600 clamp(1.6rem,2.2vw,2rem)/1 var(--display);letter-spacing:-.025em}
+.card h3 span{display:block;font:italic 400 .62em/1.2 var(--serif);letter-spacing:0;color:var(--c)}
+.card p{margin:12px 0 0;font-size:.93rem;line-height:1.45;color:rgba(255,255,255,.85)}
+.card--po{--c:var(--mangue)}.card--mas{--c:var(--hibiscus)}.card--cc{--c:var(--soleil)}.card--sy{--c:var(--ciel)}
+
+/* =========================================================
+   VIVEZ-LE
+   ========================================================= */
+.live{background:var(--ocean);color:#fff;overflow:hidden}
+.live::before{content:"";position:absolute;inset:0;background:url(img/texture.png) bottom/cover no-repeat;opacity:.12;filter:invert(1)}
+.live .wrap{position:relative;display:grid;gap:60px;align-items:center}
+@media (min-width:960px){.live .wrap{grid-template-columns:6fr 6fr;gap:90px}}
+.live .arch__img{aspect-ratio:4/4.6;box-shadow:0 40px 90px -30px rgba(0,0,0,.55)}
+.live .arch__ring{border-color:var(--soleil);opacity:.6}
+.spin-badge{position:absolute;right:-12px;bottom:6%;width:132px;aspect-ratio:1;display:grid;place-items:center}
+.spin-badge svg{position:absolute;inset:0;animation:spin 16s linear infinite reverse}
+.spin-badge text{font:600 12.5px var(--display);letter-spacing:.2em;fill:var(--nuit);text-transform:uppercase}
+.spin-badge::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--soleil);box-shadow:0 14px 40px -10px rgba(0,0,0,.4)}
+.spin-badge span{position:relative;font-size:2rem;line-height:1}
+.xp{list-style:none;margin:40px 0 0;padding:0;counter-reset:xp}
+.xp li{display:grid;grid-template-columns:62px 1fr;gap:6px 14px;padding:22px 0;border-top:1px solid rgba(255,255,255,.2);transition:padding .5s var(--ease)}
+.xp li:last-child{border-bottom:1px solid rgba(255,255,255,.2)}
+.xp li:hover{padding-left:12px}
+.xp li::before{counter-increment:xp;content:"0" counter(xp);grid-row:span 2;font:italic 400 2.2rem/1 var(--serif);color:var(--soleil)}
+.xp h3{margin:0;font:600 1.35rem/1.1 var(--display);letter-spacing:-.015em}
+.xp p{margin:0;font-size:.96rem;color:rgba(255,255,255,.78)}
+.tip{position:relative;margin-top:34px;padding:22px 24px 22px 34px;border-radius:22px;background:var(--sable);color:var(--nuit);overflow:hidden}
+.tip::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px}
+.tip b{display:block;font:700 .7rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--hibiscus);margin-bottom:8px}
+.tip p{margin:0;font-size:1rem;line-height:1.5}
+
+/* =========================================================
+   INFOS PRATIQUES
+   ========================================================= */
+.prat__head{display:grid;gap:22px;margin-bottom:54px}
+@media (min-width:960px){.prat__head{grid-template-columns:7fr 5fr;align-items:end}}
+.tiles{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:900px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{position:relative;padding:26px 24px;border-radius:26px;background:#fff;border:1px solid rgba(13,63,79,.1);transition:transform .5s var(--ease),box-shadow .5s;overflow:hidden}
+.tile:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(13,63,79,.5)}
+.tile__ic{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;background:var(--c);color:var(--nuit);margin-bottom:22px}
+.tile__ic svg{width:24px;height:24px}
+.tile__v{display:block;font:600 clamp(2rem,3.6vw,2.9rem)/1 var(--display);letter-spacing:-.035em;color:var(--nuit)}
+.tile p{margin:8px 0 0;font-size:.93rem;line-height:1.45;color:rgba(8,40,51,.75)}
+.tile--dark{background:var(--nuit);border:0}
+.tile--dark .tile__v{color:var(--soleil);font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+.tile--dark p{color:rgba(255,255,255,.8)}
+.app{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;border-radius:26px;border:1.5px dashed rgba(13,63,79,.3)}
+.app p{margin:0;font-size:.98rem}
+.app p b{font-family:var(--display);font-weight:600}
+.app__stores{display:flex;gap:10px;flex-wrap:wrap}
+.store{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:var(--nuit);color:#fff;text-decoration:none;font:600 .82rem/1 var(--display)}
+.store svg{width:16px;height:16px}
+
+/* =========================================================
+   GALERIE
+   ========================================================= */
+.gal{padding:0 0 clamp(70px,9vw,120px);overflow:hidden;background:var(--sable)}
+.gal__tag{font:700 clamp(3rem,10.5vw,10rem)/.9 var(--display);letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--nuit);opacity:.9;text-align:center;margin:0 0 -0.2em;position:relative;z-index:1;pointer-events:none}
+.gal__tag span{color:var(--soleil);-webkit-text-stroke:0;font-family:var(--serif);font-style:italic;font-weight:400}
+.strip{display:flex;gap:16px;width:max-content;animation:marquee 60s linear infinite;align-items:center}
+.strip:hover{animation-play-state:paused}
+.strip figure{margin:0;flex:none;width:clamp(200px,22vw,300px);border-radius:24px;overflow:hidden;aspect-ratio:3/4}
+.strip figure:nth-child(3n+2){aspect-ratio:4/4.4;border-radius:999px 999px 24px 24px}
+.strip figure:nth-child(3n){aspect-ratio:3/3.6}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.strip figure:hover img{transform:scale(1.07)}
+.gal__cap{text-align:center;margin:36px auto 0;font-size:.95rem;color:rgba(8,40,51,.7);padding:0 16px}
+.gal__cap b{color:var(--nuit);font-family:var(--display);font-weight:600}
+
+/* =========================================================
+   CTA + COMPTE À REBOURS
+   ========================================================= */
+.cta{position:relative;color:#fff;overflow:hidden;background:var(--abysse)}
+.cta__bg{position:absolute;inset:0}
+.cta__bg img{width:100%;height:100%;object-fit:cover}
+.cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,42,53,.55),rgba(7,42,53,.8) 60%,rgba(7,42,53,.96))}
+.cta .wrap{position:relative;padding:clamp(90px,12vw,160px) 0;text-align:center}
+.cta .h2{font-size:clamp(2.6rem,7.4vw,6.4rem);color:#fff;max-width:14ch;margin-inline:auto}
+.cta .h2 em{color:var(--soleil)}
+.cta .lede{margin-inline:auto;text-align:center}
+.count{display:flex;justify-content:center;gap:clamp(8px,1.6vw,16px);margin:46px 0 0}
+.count div{min-width:clamp(70px,11vw,124px);padding:18px 8px 14px;border-radius:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.count b{display:block;font:600 clamp(2rem,5vw,3.8rem)/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.count span{display:block;margin-top:8px;font:700 .64rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:44px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:18px 28px;border-radius:99px;font:600 1rem/1 var(--display);text-decoration:none;transition:transform .35s var(--ease),background .3s,color .3s}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn--main{background:var(--soleil);color:var(--nuit);box-shadow:0 20px 40px -18px rgba(249,202,70,.8)}
+.btn--main:hover{background:#fff}
+.btn--ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+
+/* =========================================================
+   FOOTER — CONTACT & RÉSEAUX
+   ========================================================= */
+.foot{background:var(--abysse);color:rgba(255,255,255,.8);font-size:.95rem}
+.foot__main{display:grid;gap:44px;padding:clamp(64px,8vw,96px) 0 48px}
+@media (min-width:900px){.foot__main{grid-template-columns:1.15fr 1.25fr 1fr;gap:56px}}
+.foot__brand img{width:220px;height:auto}
+.foot__brand p{margin:22px 0 0;font:italic 400 1.9rem/1.1 var(--serif);color:#fff;max-width:13ch}
+.foot__brand p em{color:var(--soleil)}
+.foot__brand small{display:block;margin-top:14px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.foot h4{margin:0 0 20px;font:700 .72rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--soleil)}
+.contact{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.contact li a,.contact li > div{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:center;padding:12px 14px 12px 10px;border-radius:16px;text-decoration:none;transition:background .3s}
+.contact li a:hover{background:rgba(255,255,255,.07)}
+.contact .ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--soleil)}
+.contact .ic svg{width:19px;height:19px}
+.contact small{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2px}
+.contact span{color:#fff;line-height:1.4}
+.socials{display:grid;gap:10px}
+.soc{position:relative;display:flex;align-items:center;gap:14px;padding:12px 18px 12px 12px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);text-decoration:none;color:#fff;overflow:hidden;transition:transform .4s var(--ease),border-color .3s}
+.soc::before{content:"";position:absolute;inset:0;background:var(--g);opacity:0;transition:opacity .4s;z-index:0}
+.soc:hover{transform:translateX(6px);border-color:transparent}
+.soc:hover::before{opacity:1}
+.soc > *{position:relative;z-index:1}
+.soc__ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--g);flex:none}
+.soc__ic svg{width:22px;height:22px}
+.soc b{display:block;font:600 1rem/1.2 var(--display)}
+.soc small{display:block;font-size:.8rem;color:rgba(255,255,255,.65)}
+.soc:hover small{color:rgba(255,255,255,.9)}
+.soc .arr{margin-left:auto;width:18px;height:18px;opacity:.6}
+.soc--ig{--g:linear-gradient(135deg,#feda75 0%,#fa7e1e 25%,#d62976 55%,#962fbf 80%,#4f5bd5 100%)}
+.soc--tt{--g:linear-gradient(135deg,#111 0%,#111 55%,#25f4ee 140%)}
+.soc--tt .soc__ic{box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.soc--fb{--g:linear-gradient(135deg,#1877f2,#0b5fd1)}
+.foot__iles{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.foot__iles .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;padding:20px 0;font:600 .82rem/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.foot__iles i{font-style:normal;color:var(--soleil)}
+.foot__legal .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 30px;padding:26px 0 34px;font-size:.78rem;line-height:1.6;color:rgba(255,255,255,.5)}
+.foot__legal a{color:rgba(255,255,255,.8)}
+.foot__legal nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .hero__title .l{transform:none;opacity:1}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PRÉ-HEADER ============ -->
+<div class="pre">
+  <div class="wrap">
+    <span>Spécial Carnaval 2027 <span class="hide-s">· 5 min de lecture</span></span>
+    <span><a href="#">Voir la version en ligne</a></span>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero__media" id="heroMedia"><img src="img/c536.webp" alt="Carnavalier en costume de plumes jaunes lors du Carnaval de Guadeloupe"></div>
+  <div class="hero__shade"></div>
+  <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+  <div class="hero__top wrap">
+    <a class="brand" href="https://www.lesilesdeguadeloupe.com/" aria-label="Les Îles de Guadeloupe — site officiel"><img src="img/logo.svg" alt="Les Îles de Guadeloupe — Incomparables"></a>
+    <span class="issue-pill"><i></i>Newsletter n°27 · Spécial Kannaval</span>
+    <div class="issue"><span>Édition</span><b>Novembre 2026</b></div>
+  </div>
+
+  <div class="badge" aria-hidden="true">
+    <svg viewBox="0 0 200 200"><defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+      <text><textPath href="#ring" textLength="498">Bon kannaval ✦ An nou ay ✦ Saison 2027 ✦</textPath></text></svg>
+    <div class="badge__core"><div><small>Jours gras</small><strong id="badgeDays">J-81</strong></div></div>
+  </div>
+
+  <div class="hero__body wrap">
+    <p class="kicker">Les Îles de Guadeloupe présentent</p>
+    <p class="hero__serif">Il y a tant de <em>rythmes</em> en elles.</p>
+  </div>
+
+  <h1 class="hero__title" aria-label="Kannaval"><span class="hero__mask" aria-hidden="true"><span class="l">K</span><span class="l">A</span><span class="l">N</span><span class="l">N</span><span class="l">A</span><span class="l">V</span><span class="l">A</span><span class="l">L</span></span></h1>
+
+  <div class="hero__foot">
+    <div class="wrap">
+      <div>Saison<b>3 janv. <span>→</span> 10 févr. 2027</b></div>
+      <div>Jours gras<b>7 <span>→</span> 10 février</b></div>
+      <div>Terrain de jeu<b>32 communes en fête</b></div>
+      <div>Entrée<b>Défilés gratuits</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker ticker--tilt" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Mas ka vini <i>✦</i> Groupes à po <i>✦</i> <em>tanbou</em> <i>✦</i> Caisses claires <i>✦</i> Vaval <i>✦</i> Lévé pyjama <i>✦</i> <em>paillettes</em> <i>✦</i> Mariage burlesque <i>✦</i> Reine du carnaval <i>✦</i></span>
+    <span>Mas ka vini <i>✦</i> Groupes à po <i>✦</i> <em>tanbou</em> <i>✦</i> Caisses claires <i>✦</i> Vaval <i>✦</i> Lévé pyjama <i>✦</i> <em>paillettes</em> <i>✦</i> Mariage burlesque <i>✦</i> Reine du carnaval <i>✦</i></span>
+  </div>
+</div>
+
+<!-- ============ 01 ÉDITO ============ -->
+<section class="sec edito" id="edito">
+  <div class="wrap">
+    <div class="arch reveal">
+      <div class="arch__ring"></div>
+      <div class="arch__img"><img src="img/portrait3.webp" alt="Carnavalière d'un groupe à po, tambour à l'épaule"></div>
+      <span class="sticker sticker--a">Bèl <em>kannaval</em>&nbsp;!</span>
+      <span class="sticker sticker--b">+150 ans d'histoire</span>
+    </div>
+    <div class="edito__text">
+      <p class="eyebrow reveal"><b>01</b> L'édito</p>
+      <h2 class="h2 reveal d1">Cinq semaines où l'archipel <em>ne dort plus.</em></h2>
+      <p class="reveal d2">Dès le premier dimanche de janvier, nos rues s'embrasent : tambours en peau de cabri, plumes, paillettes et masques satiriques. Né il y a plus de 150 ans de la rencontre entre fêtes européennes et traditions africaines, le Carnaval de Guadeloupe est notre plus grande fête populaire.</p>
+      <p class="reveal d3">En février 2027, venez le vivre — pas seulement le regarder.</p>
+      <blockquote class="quote reveal d3">«&nbsp;Le carnaval, c'est l'âme de nos îles qui sort dans la&nbsp;rue.&nbsp;»<span>— L'équipe du Comité du Tourisme</span></blockquote>
+      <div class="sign reveal d4">
+        <svg viewBox="0 0 66 63" aria-hidden="true"><use href="#butterfly" width="66" height="63"/></svg>
+        <div><b>Comité du Tourisme des Îles de Guadeloupe</b>Les Abymes, Guadeloupe</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 CHIFFRES ============ -->
+<section class="sec numbers on-dark" id="chiffres">
+  <div class="wrap">
+    <div class="numbers__head">
+      <div>
+        <p class="eyebrow reveal"><b>02</b> En chiffres</p>
+        <h2 class="h2 reveal d1">La fête, <em>en grand.</em></h2>
+      </div>
+      <p class="lede reveal d2" style="max-width:40ch">Le plus long carnaval de France se vit sur tout l'archipel, chaque week-end, jusqu'au bouquet final.</p>
+    </div>
+
+    <div class="stats">
+      <article class="stat reveal" style="--c:var(--mangue)"><span class="stat__n"><span data-count="150">0</span><sup>+</sup></span><p><b>ans de tradition</b>, entre fêtes européennes et rythmes africains</p></article>
+      <article class="stat reveal d1" style="--c:var(--canne)"><span class="stat__n" data-count="39">0</span><p><b>jours de fête</b>, du 3 janvier au 10 février 2027</p></article>
+      <article class="stat stat--big reveal d2">
+        <div class="stat__img"><img src="img/c2.webp" alt=""></div>
+        <span class="stat__n" data-count="100000">0</span>
+        <p><b>spectateurs attendus</b> pour la grande parade du Mardi Gras à Basse-Terre</p>
+      </article>
+      <article class="stat reveal" style="--c:var(--ciel)"><span class="stat__n"><span class="pre-sym">≈</span><span data-count="130">0</span></span><p><b>groupes</b> de carnaval actifs</p></article>
+      <article class="stat reveal d1" style="--c:var(--hibiscus)"><span class="stat__n"><span class="pre-sym">≈</span><span data-count="20000">0</span></span><p><b>carnavaliers</b> costumés dans les groupes</p></article>
+      <article class="stat reveal d2" style="--c:var(--soleil)"><span class="stat__n" data-count="32">0</span><p><b>communes</b> en fête sur l'archipel</p></article>
+      <article class="stat reveal d3" style="--c:var(--canne)"><span class="stat__n"><span data-count="0">0</span><sup>€</sup></span><p><b>pour assister aux défilés</b> : ils sont gratuits et ouverts à tous</p></article>
+    </div>
+    <p class="sources">Sources : Comité du Tourisme des Îles de Guadeloupe ; presse locale (RCI, Mardi Gras 2025 : 80 000 à 100 000 spectateurs attendus à Basse-Terre) ; revue <i>Ethnologies</i>, 2012 (≈ 130 groupes actifs, ≈ 20 000 membres).</p>
+  </div>
+</section>
+
+<!-- ============ 03 JOURS GRAS ============ -->
+<section class="sec" id="programme">
+  <div class="wrap">
+    <div class="days-head">
+      <div>
+        <p class="eyebrow reveal"><b>03</b> Le programme</p>
+        <h2 class="h2 reveal d1">Les 4 jours <em>gras.</em></h2>
+      </div>
+      <p class="lede reveal d2">Du dimanche 7 au mercredi 10 février 2027, la saison atteint son sommet. Quatre jours, quatre ambiances : notez-les dans votre agenda.</p>
+    </div>
+
+    <div class="rail" id="rail"><i style="left:12.5%"></i><i style="left:37.5%"></i><i style="left:62.5%"></i><i style="left:87.5%"></i></div>
+
+    <ol class="days">
+      <li class="day day--dim reveal">
+        <div class="day__top"><span>Dimanche</span><span>Févr. 2027</span></div>
+        <div class="day__num">07</div>
+        <h3>Dimanche Gras</h3>
+        <p class="day__place"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Pointe-à-Pitre</p>
+        <p class="d">Grande parade en compétition : les groupes rivalisent d'audace devant le jury.</p>
+        <span class="day__tag"><i></i>La compétition</span>
+      </li>
+      <li class="day day--lun reveal d1">
+        <div class="day__top"><span>Lundi</span><span>Févr. 2027</span></div>
+        <div class="day__num">08</div>
+        <h3>Lundi Gras</h3>
+        <p class="day__place"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Basse-Terre · Saint-François</p>
+        <p class="d">Parade de nuit, concours de chorégraphie et mariages burlesques où les rôles s'inversent.</p>
+        <span class="day__tag"><i></i>La nuit</span>
+      </li>
+      <li class="day day--mar reveal d2">
+        <span class="day__ribbon">Immanquable</span>
+        <div class="day__top"><span>Mardi</span><span>Févr. 2027</span></div>
+        <div class="day__num">09</div>
+        <h3>Mardi Gras</h3>
+        <p class="day__place"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Basse-Terre</p>
+        <p class="d">Le sommet : la plus grande parade de l'année, dans les rues en pente de la ville.</p>
+        <span class="day__tag"><i></i>Jusqu'à 100 000 spectateurs</span>
+      </li>
+      <li class="day day--mer reveal d3">
+        <div class="day__top"><span>Mercredi</span><span>Févr. 2027</span></div>
+        <div class="day__num">10</div>
+        <h3>Mercredi des Cendres</h3>
+        <p class="day__place"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Tout l'archipel</p>
+        <p class="d">Défilés en noir et blanc, puis Vaval, roi du carnaval, part en fumée.</p>
+        <p class="day__vaval">«&nbsp;Vaval pa kité&nbsp;nou&nbsp;!&nbsp;»</p>
+      </li>
+    </ol>
+
+    <div class="days-note reveal">
+      <span class="pill"><i>✦</i> Chaque dimanche dès le 3 janvier</span>
+      <span>Parades dans les communes, élection de la Reine, défilés d'enfants. <b>Programme détaillé publié par les comités de carnaval.</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 LES GROUPES ============ -->
+<section class="sec groups" id="groupes">
+  <div class="wrap">
+    <div class="groups__head">
+      <div>
+        <p class="eyebrow reveal"><b>04</b> Les groupes</p>
+        <h2 class="h2 reveal d1">Quatre familles, <em>quatre sons.</em></h2>
+      </div>
+      <p class="lede reveal d2">Chaque groupe a son identité, ses costumes et sa musique. Apprenez à les reconnaître… à l'oreille.</p>
+    </div>
+    <div class="cards">
+      <article class="card card--po reveal">
+        <img src="img/tambour.webp" alt="Musicien d'un groupe à po jouant du tambour" loading="lazy">
+        <div class="card__top"><span class="card__idx">01</span><span class="card__chip">Roots</span></div>
+        <div class="card__body"><h3><span>Groupes</span>à po</h3><p>Tambours en peau de cabri, ti-bois et chants créoles. L'âme originelle du carnaval.</p></div>
+      </article>
+      <article class="card card--mas reveal d1">
+        <img src="img/c1.webp" alt="Masque peint d'un groupe à mas" loading="lazy" style="object-position:30% 50%">
+        <div class="card__top"><span class="card__idx">02</span><span class="card__chip">Satire</span></div>
+        <div class="card__body"><h3><span>Groupes</span>à mas</h3><p>Masques et performances : on rit de l'actualité, on bouscule l'ordre établi.</p></div>
+      </article>
+      <article class="card card--cc reveal d2">
+        <img src="img/caisses110.webp" alt="Danseuses d'un groupe à caisses claires en costumes violets" loading="lazy">
+        <div class="card__top"><span class="card__idx">03</span><span class="card__chip">Cadence</span></div>
+        <div class="card__body"><h3><span>Groupes à</span>caisses claires</h3><p>Percussions millimétrées, chorégraphies et costumes à thème.</p></div>
+      </article>
+      <article class="card card--sy reveal d3">
+        <img src="img/synthe.webp" alt="Danseuse d'un groupe à synthé devant un char sonorisé" loading="lazy">
+        <div class="card__top"><span class="card__idx">04</span><span class="card__chip">Urbain</span></div>
+        <div class="card__body"><h3><span>Groupes</span>à synthé</h3><p>Claviers, sonos et bandes-son : la touche moderne de la parade.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 VIVEZ-LE ============ -->
+<section class="sec live on-dark" id="experiences">
+  <div class="wrap">
+    <div class="arch reveal">
+      <div class="arch__ring"></div>
+      <div class="arch__img"><img src="img/c2.webp" alt="Carnavalière en costume de plumes multicolores" loading="lazy" style="object-position:72% 30%"></div>
+      <div class="spin-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="ring2" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs><text><textPath href="#ring2" textLength="458">Vivez-le ✦ de l'intérieur ✦ 2027 ✦</textPath></text></svg>
+        <span>🪶</span>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow reveal"><b>05</b> Expériences</p>
+      <h2 class="h2 reveal d1">Ne le regardez pas. <em>Vivez-le.</em></h2>
+      <ul class="xp">
+        <li class="reveal"><h3>Les coulisses</h3><p>Assistez aux répétitions et aux ateliers musicaux aux côtés des carnavaliers.</p></li>
+        <li class="reveal d1"><h3>Lévé Pyjama</h3><p>Le défilé du petit matin… en pyjama, évidemment.</p></li>
+        <li class="reveal d2"><h3>Mariage burlesque</h3><p>Une noce parodique où les rôles s'inversent et l'humour règne.</p></li>
+        <li class="reveal d3"><h3>Élection de la Reine</h3><p>Strass, plumes et couronne : la soirée glamour de la saison.</p></li>
+      </ul>
+      <div class="tip reveal d2">
+        <div class="madras" style="position:absolute;left:0;top:0;bottom:0;width:14px"></div>
+        <b>Le conseil de l'Office</b>
+        <p>Le costume n'est pas obligatoire… mais paillettes, maquillage et accessoires sont vivement recommandés. ✦</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 INFOS PRATIQUES ============ -->
+<section class="sec" id="pratique">
+  <div class="wrap">
+    <div class="prat__head">
+      <div>
+        <p class="eyebrow reveal"><b>06</b> Infos pratiques</p>
+        <h2 class="h2 reveal d1">Préparer <em>son voyage.</em></h2>
+      </div>
+      <p class="lede reveal d2">L'essentiel en six chiffres. Février est en haute saison : réservez vols et hébergements tôt.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile reveal" style="--c:var(--soleil)">
+        <div class="tile__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+        <span class="tile__v">≈ 8 h 30</span><p>de vol direct Paris → Pointe-à-Pitre</p>
+      </div>
+      <div class="tile reveal d1" style="--c:var(--canne)">
+        <div class="tile__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <span class="tile__v">− 5 h</span><p>de décalage horaire avec Paris en février</p>
+      </div>
+      <div class="tile reveal d2" style="--c:var(--mangue)">
+        <div class="tile__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div>
+        <span class="tile__v">28 °C</span><p>en journée : idéal pour défiler en costume</p>
+      </div>
+      <div class="tile reveal" style="--c:var(--ciel)">
+        <div class="tile__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 8c2 0 2-1.5 4-1.5S8 8 10 8s2-1.5 4-1.5S16 8 18 8s2-1.5 4-1.5M2 13c2 0 2-1.5 4-1.5S8 13 10 13s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/></svg></div>
+        <span class="tile__v">26 °C</span><p>pour l'eau : une baignade entre deux parades</p>
+      </div>
+      <div class="tile reveal d1" style="--c:var(--soleil)">
+        <div class="tile__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.4 1.7-2 3-2s2.4.6 3 2M14 10h4M14 13h3"/></svg></div>
+        <span class="tile__v">€ · ID</span><p>Euro et carte d'identité suffisent aux Européens</p>
+      </div>
+      <div class="tile tile--dark reveal d2">
+        <div class="tile__ic" style="background:var(--soleil)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></svg></div>
+        <span class="tile__v">Le Carême</span><p>c'est le nom local de la saison sèche : de décembre à mai, le meilleur moment.</p>
+      </div>
+    </div>
+    <div class="app reveal">
+      <p>Programme jour par jour, plages, météo : téléchargez l'appli <b>Hello Guadeloupe</b>.</p>
+      <div class="app__stores">
+        <a class="store" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1ZM13.9 5c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.5-.7.8-1.2 2-1.1 3.1 1.1.1 2.3-.6 3-1.4Z"/></svg>App Store</a>
+        <a class="store" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8c-.3.3-.4.7-.4 1.2v18c0 .5.1.9.4 1.2l10-10.2-10-10.2Zm11.1 9.1 2.8-2.8L5 1.1c-.4-.2-.8-.3-1.1-.2l10.8 10Zm0 2.2L3.9 23.1c.3.1.7 0 1.1-.2l12.5-7-2.8-2.8Zm4-3.7-3 1.7 3.1 3.1 3-1.7c.9-.5.9-1.9 0-2.4l-3.1-.7Z"/></svg>Google Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIE ============ -->
+<section class="gal" aria-label="Galerie photo">
+  <p class="gal__tag" aria-hidden="true">#Kannaval<span>2027</span></p>
+  <div class="strip" id="strip">
+    <figure><img src="img/danseuse.webp" alt="Danseuse en costume vert" loading="lazy" style="object-position:55% 30%"></figure>
+    <figure><img src="img/c303.webp" alt="Enfant maquillé de paillettes roses" loading="lazy"></figure>
+    <figure><img src="img/c3.webp" alt="Groupe masqué défilant" loading="lazy"></figure>
+    <figure><img src="img/hero-caisses.webp" alt="Carnavalières en coiffes de plumes" loading="lazy" style="object-position:30% 40%"></figure>
+    <figure><img src="img/c45.webp" alt="Carnavalier en coiffe rouge et plumes" loading="lazy"></figure>
+    <figure><img src="img/mas222.webp" alt="Groupe à mas de nuit" loading="lazy"></figure>
+    <figure><img src="img/c4.webp" alt="Tambourinaire en costume" loading="lazy"></figure>
+  </div>
+  <p class="gal__cap">Partagez vos plus belles photos avec <b>#IlesDeGuadeloupe</b> — les meilleures seront publiées sur nos réseaux.</p>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta on-dark" id="cta">
+  <div class="cta__bg"><img src="img/ilet.webp" alt="" loading="lazy"></div>
+  <div class="madras madras-band" style="position:relative"></div>
+  <div class="wrap">
+    <p class="eyebrow reveal" style="justify-content:center;color:var(--soleil)"><b style="background:var(--soleil);color:var(--nuit)">✦</b> Le compte à rebours est lancé</p>
+    <h2 class="h2 reveal d1">Rendez-vous le <em>7 février 2027.</em></h2>
+    <p class="lede reveal d2">Avant le Dimanche Gras à Pointe-à-Pitre. Et entre deux parades, cinq îles et leurs lagons vous attendent.</p>
+    <div class="count reveal d2" id="count" aria-live="off">
+      <div><b data-k="d">--</b><span>Jours</span></div>
+      <div><b data-k="h">--</b><span>Heures</span></div>
+      <div><b data-k="m">--</b><span>Minutes</span></div>
+      <div><b data-k="s">--</b><span>Secondes</span></div>
+    </div>
+    <div class="btns reveal d3">
+      <a class="btn btn--main" href="https://www.lesilesdeguadeloupe.com/">Planifier mon séjour <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--ghost" href="https://www.lesilesdeguadeloupe.com/decouvrir/le-carnaval/">Tout savoir sur le carnaval</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="madras madras-band"></div>
+  <div class="wrap foot__main">
+    <div class="foot__brand">
+      <img src="img/logo.svg" alt="Les Îles de Guadeloupe — Incomparables">
+      <p>Il y a tant d'<em>îles</em> en&nbsp;elles.</p>
+      <small>Karukera · l'île aux belles eaux</small>
+    </div>
+
+    <div>
+      <h4>Nous contacter</h4>
+      <ul class="contact">
+        <li><div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.4 7-12.5a7 7 0 1 0-14 0C5 14.6 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Adresse</small>Immeuble Antares, rue Georges Biras<br>Parc d'activités de Dothémare<br>97139 Les Abymes, Guadeloupe</span></div></li>
+        <li><a href="tel:+590590820930"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span><span><small>Téléphone</small>+590 (0)5 90 82 09 30</span></a></li>
+        <li><a href="mailto:info@lesilesdeguadeloupe.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg></span><span><small>E-mail</small>info@lesilesdeguadeloupe.com</span></a></li>
+        <li><a href="https://www.lesilesdeguadeloupe.com/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><span><small>Site officiel</small>lesilesdeguadeloupe.com</span></a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Suivez-nous</h4>
+      <div class="socials">
+        <a class="soc soc--ig" href="https://www.instagram.com/ilesguadeloupe/" target="_blank" rel="noopener">
+          <span class="soc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg></span>
+          <span><b>Instagram</b><small>@ilesguadeloupe</small></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="soc soc--tt" href="https://www.tiktok.com/@ilesguadeloupe" target="_blank" rel="noopener">
+          <span class="soc__ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></svg></span>
+          <span><b>TikTok</b><small>Le carnaval en vidéos courtes</small></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="soc soc--fb" href="https://www.facebook.com/lesilesdeguadeloupe" target="_blank" rel="noopener">
+          <span class="soc__ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V1.6L14 1.6c-4 0-4.9 3-4.9 4.9v2H6.8v4h2.3V22H14v-9.5h3.3l.4-4H14Z"/></svg></span>
+          <span><b>Facebook</b><small>/lesilesdeguadeloupe</small></span>
+          <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot__iles">
+    <div class="wrap"><span>Grande-Terre</span><i>✦</i><span>Basse-Terre</span><i>✦</i><span>Marie-Galante</span><i>✦</i><span>Les Saintes</span><i>✦</i><span>La Désirade</span></div>
+  </div>
+
+  <div class="foot__legal">
+    <div class="wrap">
+      <span>Vous recevez cette newsletter car vous êtes inscrit·e sur lesilesdeguadeloupe.com.<br>© 2026 Comité du Tourisme des Îles de Guadeloupe · Photos : Îles de Guadeloupe — G. Aricique, B. Balmokoun.<br>Projet pédagogique : newsletter réalisée dans le cadre d'un exercice, non diffusée par le Comité du Tourisme.</span>
+      <nav><a href="#">Se désinscrire</a><a href="#">Gérer mes préférences</a><a href="#top">Retour en haut ↑</a></nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Papillon du logo (réutilisé en signature) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="butterfly" viewBox="200 0 66 63">
+    <path fill="#fff" d="M266.001 31.263a31.4 31.4 0 0 1-.336 4.587 30 30 0 0 1-.596 3.009q-.188.744-.407 1.479-.224.735-.48 1.457a31 31 0 0 1-1.171 2.833q-.328.693-.688 1.372-.36.677-.754 1.334-.394.656-.818 1.297-.423.639-.881 1.255-.457.615-.94 1.208-.486.594-.999 1.163-.514.568-1.055 1.112t-1.109 1.057a32 32 0 0 1-2.365 1.948q-.613.458-1.251.883a31 31 0 0 1-2.624 1.576 31 31 0 0 1-4.193 1.864q-.72.258-1.453.481-.732.225-1.475.41-.743.188-1.492.336a32 32 0 0 1-3.027.448q-.763.075-1.526.112a32 32 0 0 1-3.059 0 32 32 0 0 1-3.045-.299 32 32 0 0 1-1.508-.261 29 29 0 0 1-1.492-.337 33 33 0 0 1-1.475-.409q-.733-.224-1.453-.48a30 30 0 0 1-2.826-1.175q-.69-.328-1.367-.69-.676-.36-1.331-.756a33 33 0 0 1-1.293-.82 31.5 31.5 0 0 1-5.78-5 32 32 0 0 1-1.941-2.371 29 29 0 0 1-.882-1.255 31.6 31.6 0 0 1-3.43-6.836 33 33 0 0 1-.48-1.457 32 32 0 0 1-.743-2.976 34 34 0 0 1-.261-1.512 31.5 31.5 0 0 1 1.004-13.662q.223-.735.48-1.458a31 31 0 0 1 1.171-2.833q.328-.692.688-1.371.36-.676.754-1.335t.817-1.296q.424-.64.882-1.255.457-.616.94-1.21.486-.592.999-1.162.514-.568 1.055-1.112.54-.543 1.109-1.057a31.2 31.2 0 0 1 10.432-6.27q.72-.258 1.454-.482.732-.225 1.475-.409.742-.187 1.492-.336a32 32 0 0 1 3.027-.449q.763-.075 1.525-.112a32 32 0 0 1 3.06 0 32 32 0 0 1 3.045.3q.757.112 1.508.26.749.15 1.492.337.742.188 1.475.409a30 30 0 0 1 2.88 1.033q.707.292 1.398.622.691.329 1.368.69a31.2 31.2 0 0 1 11.224 10.203q.426.638.818 1.297a32 32 0 0 1 1.442 2.705q.328.694.62 1.402a31 31 0 0 1 1.03 2.889q.224.734.408 1.479.188.744.335 1.496a31 31 0 0 1 .559 4.566q.037.765.038 1.534z"/>
+    <path fill="#e8972b" d="M219.558 42.234c3.025-1.644 6.251-3.545 8.32-4.923-.506-1.607-2.711-4.132-1.915-10.625.357-2.91.977-3.354-1.151-4.422-3.794-1.901-11.687-4.534-16.099-5.948a30.13 30.13 0 0 0-3.986 15.025c0 5.814 1.639 11.24 4.477 15.845 1.896-.91 4.68-2.233 6.422-3.018a102 102 0 0 0 3.934-1.93"/>
+    <path fill="#a2c94a" d="M253.653 44.513c-.973-.112-7.584 1.583-11.448-.806a10.3 10.3 0 0 1-2.17-1.7c-1.72.53-5.33.352-7.167.366-3.553.024-6.522.828-7.439 1.206-4.526 1.869-5.424 2.288-10.023 4.489-.484.23-2.855 1.22-4.324 1.83 5.51 7.078 14.095 11.63 23.743 11.63 9.649 0 18.698-4.8 24.184-12.208-1.606-2.015-3.945-4.642-5.356-4.804"/>
+    <path fill="#4ea5d5" d="M234.952 16.638c.388.253.677.528.89.822 2.301 2.139-.708 5.432.749 9.783.452 1.031 1.168 2.113 2.284 3.242 1.664 1.686 4.156.154 4.699-.116q1.621-.81 3.279-.376c.822.215 1.302.42 2.139.301q1.163-.166 2.687-.655c.721-.23 1.35.532 1.158 1.213q-.02.067-.068.014l-.209-.24a.15.15 0 0 0-.131-.055c-1.028.053-2.111.444-3.421.844-1.743.53-2.762 1.04-2.821 2.227s.532 1.84 1.593 2.595c4.754 2.41 6.117.064 8.077.372 1.944.305 3.752 2.76 5.05 5.35.412.821.773 1.659 1.069 2.444a30.1 30.1 0 0 0 2.955-13.058c0-16.672-13.477-30.189-30.104-30.189-9.802 0-18.51 4.7-24.007 11.972 1.762.075 4.057.198 6.558.394 6.507.373 14.227 1.217 17.574 3.119"/>
+    <path fill="#fbde2c" d="m243.738 17.602.263.351.038.046-.093-.127a7 7 0 0 1-.208-.27"/>
+    <path fill="#fbde2c" d="M257.953 14.057c.151-1.158.028-2.433-.447-3.793-1.035-2.669-2.902-4.178-4.987-4.76-1.137-.706-2.678-.823-4.068-.715-5.152.182-9.076 6.125-7.25 11.09-1.806-5.883 3.649-12.16 9.495-10.778q.281.07.554.162a8 8 0 0 0-.642-.04c-5.234-.84-10.843 4.245-9.319 10.338.052.24.114.47.184.699-.094-.047-.195-.187-.274-.378a8.2 8.2 0 0 0 2.139 3.763 9 9 0 0 1-.956-1.416c3.005 4.71 10.468 5.578 14.282 1.011-.406.26-.756.633-1.135.84-2.845 1.962-7.487 2.947-10.56.569 1.887.701 4.153 1.662 6.117 1.112-.805.026-1.543-.145-2.363-.25-.403-.064-.98.006-1.348-.157-1.986-.758-3.945-1.723-4.622-3.771 1.416 2.347 4.155 3.776 6.838 3.954 2.755.004 2.904-.945 5.085-1.877-.905.633-2.479 1.642-3.318 1.927 3.52-.756 6.698-3.925 6.59-7.525m-3.193 5.49c.34-.358.787-.837 1.223-1.442q.379-.391.699-.837c-.565 1.095-1.284 1.945-1.92 2.277m-9.67 1.095c-6.621-4.394-3.437-13.665 2.648-14.98a8.6 8.6 0 0 0-2.416 1.254c-1.488.83-2.682 2.18-3.268 4.176a5.14 5.14 0 0 1 1.552-2.436q-.074.104-.144.21c-1.057 1.309-1.476 3.041-1.719 4.683-.123 2.628 1.098 5.308 3.347 7.093m-1.74-2.94q.12.186.199.284c.311.359.217.348-.234-.332-.713-.977-1.199-2.083-1.287-3.173.204 1.167.822 2.41 1.238 3.088 1.41 2.02 3.733 3.209 5.964 3.29-1.858.385-4.361-1.099-5.878-3.156"/>
+    <path fill="#fbde2c" d="M244.168 19.93a8.2 8.2 0 0 0 3.196 2.085c.916.269 1.867.38 2.77.427-2.089-.35-4.357-1.05-5.964-2.512"/>
+    <path fill="#2d4491" d="M246.637 38.05c4.692 2.526 6.113.214 8.065.57 3.941.719 7.1 10.324 6.745 11.748 0 0-4.794-6.853-7.1-7.121-1.028-.119-8.341 1.78-12.07-1.247 2.043-.151 4.621-1.696 4.36-3.95m4.057-6.494q-1.539.453-2.703.591c-.839.1-1.313-.116-2.13-.351q-1.644-.476-3.286.294c-.55.257-3.077 1.728-4.701 0-6.154-6.55.32-11.266-3.583-13.937-6.219-3.736-28.044-4.094-28.044-4.094s13.828 4.217 19.259 6.94c2.13 1.069 1.508 1.513 1.151 4.423-1.16 9.458 4.048 10.497 1.102 12.541-2.619 1.816-8.997 5.29-13.243 7.249-2.849 1.281-8.473 4.005-8.473 4.005l9.433-3.256c-.55.52-4.637 2.946-4.881 3.161 0 0 4.796-1.978 5.508-2.319 4.599-2.2 5.497-2.62 10.023-4.49.916-.378 3.886-1.114 7.439-1.207 1.707-.044 3.086.17 3.849.101 2.63-.235 4.69-1.551 6.023-3.512.703-1.035.657-.965 1.026-1.198l.067-.044c.169-.042.274-.035.452-.081-.048-.026-.007-.125 0-.178.202-1.794 1.247-2.444 3.003-2.932 1.319-.367 2.411-.732 3.441-.76q.082-.002.131.059l.202.244q.048.056.068-.014c.21-.674-.403-1.452-1.129-1.24"/>
+    <path fill="#cf3426" d="M244.987 36.254c.637.83.765 4.383-7.573 4.956 0 0 2.578-1.41 4.145-3.765.819-1.235 2.4-2.53 3.428-1.191"/>
+  </symbol>
+</svg>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Révélations au scroll ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ---------- Compteurs animés ---------- */
+  function fmt(n){ return Math.round(n).toLocaleString('fr-FR').replace(/ | /g,' '); }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target, target = +el.dataset.count, t0 = null, dur = 1800;
+      cio.unobserve(el);
+      if(reduce || target === 0){ el.textContent = fmt(target); return; }
+      requestAnimationFrame(function step(t){
+        if(!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1), k = 1 - Math.pow(1 - p, 4);
+        el.textContent = fmt(target * k);
+        if(p < 1) requestAnimationFrame(step);
+      });
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+  /* ---------- Titre KANNAVAL ajusté pile à la largeur ---------- */
+  var title = document.querySelector('.hero__title'), mask = title.querySelector('.hero__mask');
+  mask.style.display = 'inline-block';
+  function fitTitle(){
+    title.style.fontSize = '';
+    var avail = document.documentElement.clientWidth * .955, w = mask.getBoundingClientRect().width;
+    if(w) title.style.fontSize = (parseFloat(getComputedStyle(title).fontSize) * avail / w) + 'px';
+  }
+  fitTitle(); window.addEventListener('resize', fitTitle);
+  if(document.fonts) document.fonts.ready.then(fitTitle);
+
+  /* ---------- Rail de la frise ---------- */
+  var rail = document.getElementById('rail');
+  new IntersectionObserver(function(es,o){
+    es.forEach(function(e){ if(e.isIntersecting){ rail.style.setProperty('--p',1); o.disconnect(); } });
+  },{threshold:1}).observe(rail);
+
+  /* ---------- Compte à rebours : Dimanche Gras, 7 février 2027 (heure de Guadeloupe) ---------- */
+  var target = new Date('2027-02-07T14:00:00-04:00').getTime();
+  var cells = {}; document.querySelectorAll('#count [data-k]').forEach(function(b){ cells[b.dataset.k] = b; });
+  var badge = document.getElementById('badgeDays');
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var d = Math.max(0, target - Date.now());
+    var days = Math.floor(d / 864e5), h = Math.floor(d / 36e5) % 24, m = Math.floor(d / 6e4) % 60, s = Math.floor(d / 1e3) % 60;
+    cells.d.textContent = days; cells.h.textContent = pad(h); cells.m.textContent = pad(m); cells.s.textContent = pad(s);
+    badge.textContent = d > 0 ? 'J-' + days : 'Jour J';
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- Parallaxe du hero ---------- */
+  var media = document.getElementById('heroMedia');
+  if(!reduce){
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if(ticking) return; ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY; if(y < 1200) media.style.transform = 'translate3d(0,' + (y * .28) + 'px,0)';
+        ticking = false;
+      });
+    }, {passive:true});
+  }
+
+  /* ---------- Galerie : boucle infinie ---------- */
+  var strip = document.getElementById('strip');
+  strip.innerHTML += strip.innerHTML;
+  strip.querySelectorAll('figure').forEach(function(f,i){ if(i >= 7) f.setAttribute('aria-hidden','true'); });
+
+  /* ---------- Paillettes & confettis aux couleurs du logo ---------- */
+  var cv = document.getElementById('confetti');
+  if(cv && !reduce){
+    var ctx = cv.getContext('2d'), W, H, dpr = Math.min(window.devicePixelRatio || 1, 2), parts = [], running = true;
+    var colors = ['#f9ca46','#e8972b','#a2c94a','#4ea5d5','#e2366a','#ffffff'];
+    function size(){ W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    size(); window.addEventListener('resize', size);
+    var N = W < 700 ? 34 : 64;
+    for(var i = 0; i < N; i++){
+      parts.push({x:Math.random()*W, y:Math.random()*H - H, r:2 + Math.random()*4.5, vy:.35 + Math.random()*.9, sw:Math.random()*6.28, ss:.01 + Math.random()*.02,
+        rot:Math.random()*6.28, vr:(Math.random() - .5)*.08, c:colors[i % colors.length], k:Math.random() < .55 ? 'rect' : 'disc'});
+    }
+    new IntersectionObserver(function(es){ running = es[0].isIntersecting; if(running) requestAnimationFrame(draw); }).observe(cv);
+    function draw(){
+      if(!running) return;
+      ctx.clearRect(0,0,W,H);
+      for(var i = 0; i < parts.length; i++){
+        var p = parts[i];
+        p.y += p.vy; p.sw += p.ss; p.x += Math.sin(p.sw) * .6; p.rot += p.vr;
+        if(p.y > H + 20){ p.y = -20; p.x = Math.random()*W; }
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.globalAlpha = .85; ctx.fillStyle = p.c;
+        if(p.k === 'rect'){ ctx.scale(1, Math.abs(Math.cos(p.sw*2)) + .15); ctx.fillRect(-p.r, -p.r*.55, p.r*2, p.r*1.1); }
+        else { ctx.beginPath(); ctx.arc(0,0,p.r*.7,0,6.28); ctx.fill(); ctx.globalAlpha = .9; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(-p.r*.2,-p.r*.2,p.r*.22,0,6.28); ctx.fill(); }
+        ctx.restore();
+      }
+      requestAnimationFrame(draw);
+    }
+  }
+})();
+</script>
+</body>
+</html>
