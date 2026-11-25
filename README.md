@@ -4,7 +4,9 @@ Projet pédagogique · Office de tourisme **Les Îles de Guadeloupe**
 
 **🔗 Voir la newsletter en ligne : https://newsletter-carnaval-guadeloupe.vercel.app**
 
-> Chaque modification enregistrée ici met le site à jour **automatiquement**, en 30 secondes environ.
+> Vos modifications sont enregistrées ici, dans `index.html`. Prévenez le propriétaire du dépôt une fois terminé : il remettra la version en ligne à jour.
+>
+> Pour voir le résultat tout de suite : ouvrez `index.html`, cliquez sur **Download raw file** (icône ⬇), puis ouvrez le fichier téléchargé dans votre navigateur (les images ne s'afficheront que depuis le site en ligne ou le dépôt complet téléchargé via **Code → Download ZIP**).
 
 <img src="apercu.jpg" alt="Aperçu du haut de la newsletter" width="380">
 
@@ -16,7 +18,9 @@ Projet pédagogique · Office de tourisme **Les Îles de Guadeloupe**
 2. Cliquez sur le **crayon ✏️** en haut à droite du fichier (*Edit this file*).
 3. Faites **Ctrl + F** pour trouver la phrase à changer, puis modifiez **seulement le texte**.
 4. Cliquez sur le bouton vert **Commit changes…**, écrivez en une ligne ce que vous avez changé, puis **Commit changes**.
-5. Attendez environ 30 secondes et rafraîchissez le site.
+5. C'est enregistré : la modification est visible tout de suite dans le dépôt.
+
+🔑 Pour pouvoir modifier, il faut un **compte GitHub gratuit** (https://github.com/signup) et avoir été **invité** sur ce dépôt. Envoyez votre pseudo GitHub au propriétaire, puis acceptez l'invitation reçue par e-mail.
 
 💡 **Astuce** : sur la page du dépôt, appuyez sur la touche **`.`** (point) pour ouvrir un vrai éditeur (VS Code) directement dans le navigateur.
 
